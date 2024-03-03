@@ -46,5 +46,22 @@ $answer /= 2;
 $answer -= $my_num;
 echo "\n";
 echo $answer;
+//6
+$a = 10;
+$b = 3;
+echo "\nОстаток от деления $a на $b: ", $a % $b;
+
+if ($b != 0) {
+    $result = $a % $b;
+
+    if ($result == 0) {
+        echo "\nДелится. Результат деления: ", ($a / $b);
+    } else {
+        echo "\nДелится с остатком. Остаток от деления: $result";
+    }
+} else {
+    echo "\nОшибка: деление на ноль.";
+}
+
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
