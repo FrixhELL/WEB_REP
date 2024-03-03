@@ -62,6 +62,17 @@ if ($b != 0) {
 } else {
     echo "\nОшибка: деление на ноль.";
 }
+//7
+$st = pow(2,10);
+echo "\n$st";
+$sqrt = sqrt(245);
+echo "\n$sqrt";
+$mas = array(4, 2, 5, 19, 13, 0, 10);
+$sum = 0;
+foreach ($mas as $value){
+    $sum += $value**2;
+}
+echo "\nСумма квадратов элементов массива: $sum";
 
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
