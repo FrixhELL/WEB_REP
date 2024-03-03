@@ -293,5 +293,29 @@ for ($i = 1; $i <= $l; $i++) {
     }
     echo "\n";
 }
+//20
+$numbers = array(4, 5, 6, 7, 7, 8, 8);
+$avg = array_sum($numbers)/sizeof($numbers);
+echo $avg;
+
+$first = 1;
+$last = 100;
+$sum = ($last * ($last + 1)) / 2;//формула суммы арифметической прогрессии
+
+echo "\nСумма чисел от $first до $last: $sum";
+
+$sqrtnumbers = array_map("sqrt", $numbers);
+
+$numbers = range(1, 26);
+$letters = range('a', 'z');
+echo "\n";
+$result = array_combine($letters, $numbers);
+print_r($result);
+
+$string = '1234567890';
+$pairs = str_split($string, 2);
+$arr = array_map("intval",$pairs);
+$sum = array_sum($arr);
+echo "Сумма пар чисел: $sum";
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
