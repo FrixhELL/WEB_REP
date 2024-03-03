@@ -106,6 +106,18 @@ for ($i = 0; $i<sizeof($array1); $i++){
 }
 echo"\n Полученный массив из положительных чисел: ";
 print_r($array2);
+//11
+$a = 30; // Замените на ваше число
+
+$array = array();
+
+for ($i = 1; $i <= $a; $i++) {
+    if ($a % $i === 0) {
+        $array[] = $i;
+    }
+}
+echo"Делители числа $a: \n";
+print_r($array);
 
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
