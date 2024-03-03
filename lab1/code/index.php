@@ -91,5 +91,21 @@ for ($i = 0; $i < 10; $i++) {
 }
 echo "\n";
 print_r($array);
+//10
+$a = 9;
+$b = 19;
+echo abs($a-$b);
+$c = 1824;
+$d = 239857217502352;
+echo "\n", abs($c-$d);
+
+$array1 = array(1, 2, -1, -2, 3, -3);
+$array2 = array();
+for ($i = 0; $i<sizeof($array1); $i++){
+    $array2[$i] = abs($array1[$i]);
+}
+echo"\n Полученный массив из положительных чисел: ";
+print_r($array2);
+
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
