@@ -165,6 +165,19 @@ function printArray($array, $i = 0){
 echo "\n";
 $array = array(1,2,3,4,5,6,7,8,9,10);
 printArray($array);
-
+//16
+function sumDigits($number) {
+    $sum = 0;
+    while($number>0){
+        $sum += $number % 10;
+        $number = (int)($number / 10);
+    }
+    if ($sum > 9){
+        return sumDigits($sum);
+    }
+    return $sum;
+}
+$number = 1234689;
+echo "Однозначное число: ", sumDigits($number);
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
