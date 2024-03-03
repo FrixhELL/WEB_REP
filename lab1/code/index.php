@@ -130,5 +130,14 @@ for ($i = 0; $i <= sizeof($numbers); $i++) {
         break;
     }
 }
+//13
+function printStringReturnNumber() {
+    echo "Число: ";
+    return 17;
+}
+echo "\n";
+$my_num = printStringReturnNumber();
+echo $my_num;
+
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
