@@ -33,5 +33,8 @@ $days = $months*16;
 $days_per_language = $days/$num_languages;
 echo "\n";
 echo "Дней в среднем у нее ушло на изучение каждого языка: ", $days_per_language;
+//4
+echo "\n";
+echo "8**2=", 8**2;
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
