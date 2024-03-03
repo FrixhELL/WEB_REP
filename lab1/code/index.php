@@ -235,6 +235,54 @@ $arr = array('a','b','c','d','e');
 echo "\n", sizeof($arr);
 $len = count($arr);
 echo "\n".$arr[$len-1]." ".$arr[$len-2];
+//18
+function sumGreaterTen(int $a, int $b){
+    if (($a + $b) > 10){
+        return True;
+    }
+    else{
+        return False;
+    }
+}
+echo "\n".sumGreaterTen(10, 9);
+
+function equality(int $a, int $b){
+    if ($a == $b){
+        return True;
+    }
+    else{
+        return False;
+    }
+}
+echo "\n".equality(55, 55);
+
+$test = 0;
+echo "\n";
+echo ($test == 0) ? 'верно' : '';
+echo "\n";
+$age = 56; // Замените это значение на ваше число
+
+if ($age < 10 || $age > 99) {
+    echo "$age вне [10, 99].\n";
+}
+else {
+    $sum = array_sum(str_split($age));
+
+    if ($sum <= 9) {
+        echo "Сумма цифр однозначна: $sum\n";
+    } else {
+        echo "Сумма цифр двузначна: $sum\n";
+    }
+}
+
+$arr = array(1,6,4);
+if (sizeof($arr) == 3){
+    $sum = array_sum($arr);
+    echo "В массиве 3 элемента и их сумма: ".$sum;
+}
+else{
+    echo "В массиве ".sizeof($arr)." элемента";
+}
 
 
 // Don't change the line below
