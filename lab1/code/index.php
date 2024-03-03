@@ -155,5 +155,16 @@ function cut(string $string, int $l = 10){
 }
 $cut = cut("Very long string");
 echo "\n", $cut;
+//15
+function printArray($array, $i = 0){
+    if ($i<sizeof($array)){
+        echo $array[$i] . "\n";
+        printArray($array, $i + 1);
+    }
+}
+echo "\n";
+$array = array(1,2,3,4,5,6,7,8,9,10);
+printArray($array);
+
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
