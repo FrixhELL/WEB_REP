@@ -79,5 +79,10 @@ echo round(sqrt(379));
 echo "\n";
 $array = array('floor' => floor(sqrt(587)), 'ceil' => ceil(sqrt(587)));
 print_r($array);
+//9
+$min = min(4, -2, 5, 19, -130, 0, 10);
+$max = max(4, -2, 5, 19, -130, 0, 10);
+echo "\n", "min =", $min," max =", $max;
+
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
