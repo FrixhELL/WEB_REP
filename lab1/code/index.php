@@ -83,6 +83,13 @@ print_r($array);
 $min = min(4, -2, 5, 19, -130, 0, 10);
 $max = max(4, -2, 5, 19, -130, 0, 10);
 echo "\n", "min =", $min," max =", $max;
-
+$rand = rand(0, 100);
+echo "\nРандомное число от 0 до 100: ", $rand;
+$array = array();
+for ($i = 0; $i < 10; $i++) {
+    $array[$i] = rand();
+}
+echo "\n";
+print_r($array);
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
