@@ -73,6 +73,11 @@ foreach ($mas as $value){
     $sum += $value**2;
 }
 echo "\nСумма квадратов элементов массива: $sum";
-
+//8
+echo "\n";
+echo round(sqrt(379));
+echo "\n";
+$array = array('floor' => floor(sqrt(587)), 'ceil' => ceil(sqrt(587)));
+print_r($array);
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
