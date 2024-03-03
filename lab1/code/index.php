@@ -36,5 +36,15 @@ echo "Дней в среднем у нее ушло на изучение каж
 //4
 echo "\n";
 echo "8**2=", 8**2;
+//5
+$my_num = 17;
+$answer = $my_num;
+$answer += 2;
+$answer *= 2;
+$answer -= 2;
+$answer /= 2;
+$answer -= $my_num;
+echo "\n";
+echo $answer;
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
