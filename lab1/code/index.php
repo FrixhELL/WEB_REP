@@ -138,6 +138,22 @@ function printStringReturnNumber() {
 echo "\n";
 $my_num = printStringReturnNumber();
 echo $my_num;
+//14
+function increaseEnthusiasm(string $string){
+    return $string."!";
+}
+echo "\n", increaseEnthusiasm("Good");
 
+function repeatThreeTimes(string $string){
+    return $string . $string . $string;
+}
+echo "\n", repeatThreeTimes("Bad");
+echo "\n", increaseEnthusiasm(repeatThreeTimes("Wow"));
+
+function cut(string $string, int $l = 10){
+    return substr($string,0, $l);
+}
+$cut = cut("Very long string");
+echo "\n", $cut;
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
