@@ -118,6 +118,17 @@ for ($i = 1; $i <= $a; $i++) {
 }
 echo"Делители числа $a: \n";
 print_r($array);
-
+//12
+$numbers = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+$sum = 0;
+$k = 0;
+for ($i = 0; $i <= sizeof($numbers); $i++) {
+    $sum += $numbers[$i];
+    $k += 1;
+    if ($sum > 10){
+        echo "\nКоличество первых элементов = $k";
+        break;
+    }
+}
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
