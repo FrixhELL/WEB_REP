@@ -1,5 +1,5 @@
 <?php
-
+#a
 $matches = [];
 $str = 'ahb acb aeb aeeb adcb axeb';
 $regs = '/a..b/';
@@ -10,4 +10,11 @@ echo "Слова соответствующие регулярному выра�
 foreach ($matches[0] as $match) {
     echo "$match\n";
 }
+#b
+$str = 'a1b2c3';
+
+$matches = [];
+$result = preg_replace_callback('/[0-9]+/', function ($matches) {return pow($matches[0], 3);}, $str);
+
+echo "\n".$result;
 ?>
