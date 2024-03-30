@@ -31,6 +31,38 @@
     <input type="submit" value="Добавить">
 </form>
 <br><br>
-
+<div id="table">
+    <table>
+        <thead>
+        <th>Category</th>
+        <th>Title</th>
+        <th>Email</th>
+        <th>Description</th>
+        </thead>
+        <tbody>
+        <?php
+        for($i = 2; $i < count($categories); $i++) {
+            $category = $categories[$i];
+            $emails = scandir("./categories/{$category}");
+            for($j = 2; $j < count($emails); $j++) {
+                $email = $emails[$j];
+                $items = scandir("./categories/{$category}/{$email}");
+                for($k = 2; $k < count($items); $k++) {
+                    $product = $items[$k];
+                    $desc = file_get_contents("./categories/{$category}/{$email}/{$product}");
+                    $title = substr($product, 0, strlen($product) - 4);
+                    echo "<tr>";
+                    echo "<td>$category</td>";
+                    echo "<td>$title</td>";
+                    echo "<td>$email</td>";
+                    echo "<td>$desc</td>";
+                    echo "</tr>";
+                }
+            }
+        }
+        ?>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
