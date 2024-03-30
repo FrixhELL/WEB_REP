@@ -1,6 +1,6 @@
 <?php
 if(false === isset($_POST["text"])) {
-    header('Location: /form.php');
+    header('Location: /task_1/form.php');
     exit();
 }
 $text = $_POST["text"];
