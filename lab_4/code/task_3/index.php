@@ -41,25 +41,16 @@
         </thead>
         <tbody>
         <?php
-        for($i = 2; $i < count($categories); $i++) {
-            $category = $categories[$i];
-            $emails = scandir("./categories/{$category}");
-            for($j = 2; $j < count($emails); $j++) {
-                $email = $emails[$j];
-                $items = scandir("./categories/{$category}/{$email}");
-                for($k = 2; $k < count($items); $k++) {
-                    $product = $items[$k];
-                    $desc = file_get_contents("./categories/{$category}/{$email}/{$product}");
-                    $title = substr($product, 0, strlen($product) - 4);
-                    echo "<tr>";
-                    echo "<td>$category</td>";
-                    echo "<td>$title</td>";
-                    echo "<td>$email</td>";
-                    echo "<td>$desc</td>";
-                    echo "</tr>";
-                }
-            }
-        }
+            require('vendor/autoload.php');
+            $client = new Google_Client();
+            $client->setApplicationName('lab-4');
+            $client->setScopes(['https://www.googleapis.com/auth/spreadsheets']);
+            $client->setAccessType('offline');
+            $client->setAuthConfig('credentials.json');
+
+            $service = new Google_Service_Sheets($client);
+            $spreadsheetId = "1bKXPauAFhzRgPlBbTjeXsAt1RMr5CbobKJfHi4Vtc-g";
+            $listName = "PHP-LAB4";
         ?>
         </tbody>
     </table>
