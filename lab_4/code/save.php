@@ -16,7 +16,7 @@ if(true === isset($_POST['email'], $_POST['category'], $_POST['title'], $_POST['
     $spreadsheetId = "1YeNI8xotFVyIHogk2qFDNXspg5n_FjCiH93H7kLeREI";
     $listName = "List1";
 
-    $listing = [[$category, $email, $title, $desc]];
+    $listing = [[$category, $title, $email, $desc]];
     $body = new Google_Service_Sheets_ValueRange(['values' => $listing]);
     $opts = array('valueInputOption' => 'USER_ENTERED');
 

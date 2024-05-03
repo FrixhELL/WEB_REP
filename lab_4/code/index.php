@@ -10,8 +10,8 @@
     <label for="category">Category</label>
     <select name="category" required>
         <option value="cars">cars</option>
-        <option value="other">phones</option>
-        <option value="peripherals">other</option>
+        <option value="other">other</option>
+        <option value="peripherals">peripherals</option>
     </select>
     <br>
     <label for="email">email</label>
