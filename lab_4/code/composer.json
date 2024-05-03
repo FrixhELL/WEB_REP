@@ -1,0 +1,11 @@
+{
+    "name": "rodion/code",
+    "autoload": {
+        "psr-4": {
+            "Rodion\\Code\\": "src/"
+        }
+    },
+    "require": {
+        "google/apiclient": "^2.16"
+    }
+}
