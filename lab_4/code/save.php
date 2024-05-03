@@ -12,7 +12,15 @@ if(true === isset($_POST['email'], $_POST['category'], $_POST['title'], $_POST['
     $client->setAccessType('offline');
     $client->setAuthConfig('credentials.json');
 
-    
+    $service = new Google_Service_Sheets($client);
+    $spreadsheetId = "1YeNI8xotFVyIHogk2qFDNXspg5n_FjCiH93H7kLeREI";
+    $listName = "List1";
+
+    $listing = [[$category, $email, $title, $desc]];
+    $body = new Google_Service_Sheets_ValueRange(['values' => $listing]);
+    $opts = array('valueInputOption' => 'USER_ENTERED');
+
+    $service->spreadsheets_values->append($spreadsheetId, $listName, $body, $opts);
 }
 header('Location: /index.php');
 exit();
