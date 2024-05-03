@@ -9,13 +9,9 @@
 <form action="save.php" method="post">
     <label for="category">Category</label>
     <select name="category" required>
-        <?php
-        $categories = scandir("./categories");
-        for ($i = 2; $i < count($categories); $i++) {
-            $category = $categories[$i];
-            echo "<option value=\"$category\">$category</option>";
-        }
-        ?>
+        <option value="cars">cars</option>
+        <option value="other">phones</option>
+        <option value="peripherals">other</option>
     </select>
     <br>
     <label for="email">email</label>
@@ -43,14 +39,23 @@
         <?php
             require('vendor/autoload.php');
             $client = new Google_Client();
-            $client->setApplicationName('lab-4');
+            $client->setApplicationName('lab-4-php');
             $client->setScopes(['https://www.googleapis.com/auth/spreadsheets']);
             $client->setAccessType('offline');
             $client->setAuthConfig('credentials.json');
 
             $service = new Google_Service_Sheets($client);
-            $spreadsheetId = "1bKXPauAFhzRgPlBbTjeXsAt1RMr5CbobKJfHi4Vtc-g";
-            $listName = "PHP-LAB4";
+            $spreadsheetId = "1YeNI8xotFVyIHogk2qFDNXspg5n_FjCiH93H7kLeREI";
+            $listName = "List1";
+
+            $rows = $service->spreadsheets_values->get($spreadsheetId, $listName)->getValues();
+            foreach($rows as $row) {
+                echo "<tr>";
+                foreach($row as $cell) {
+                    echo "<td>$cell</td>";
+                }
+                echo "</tr>";
+            }
         ?>
         </tbody>
     </table>
