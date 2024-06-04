@@ -37,18 +37,7 @@
         </thead>
         <tbody>
         <?php
-            require('vendor/autoload.php');
-            $client = new Google_Client();
-            $client->setApplicationName('lab-4-php');
-            $client->setScopes(['https://www.googleapis.com/auth/spreadsheets']);
-            $client->setAccessType('offline');
-            $client->setAuthConfig('credentials.json');
 
-            $service = new Google_Service_Sheets($client);
-            $spreadsheetId = "1YeNI8xotFVyIHogk2qFDNXspg5n_FjCiH93H7kLeREI";
-            $listName = "List1";
-
-            $rows = $service->spreadsheets_values->get($spreadsheetId, $listName)->getValues();
             foreach($rows as $row) {
                 echo "<tr>";
                 foreach($row as $cell) {
