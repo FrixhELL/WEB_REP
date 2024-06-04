@@ -37,14 +37,23 @@
         </thead>
         <tbody>
         <?php
-
-            foreach($rows as $row) {
-                echo "<tr>";
-                foreach($row as $cell) {
-                    echo "<td>$cell</td>";
-                }
-                echo "</tr>";
+            $mysqli = new mysqli('db', 'root', 'helloworld', 'web');
+            if (mysqli_connect_errno()) {
+                printf( "Подключение к серверу MySQL невозможно. Код ошибки: %s\n", mysqli_connect_error());
+                exit;
             }
+            if($result = $mysqli->query("SELECT * FROM ad ORDER BY created DESC"))
+            {
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    foreach (['title', 'category', 'description', 'email'] as $column) {
+                        echo "<td>{$row[$column]}</td>";
+                    }
+                    echo "</tr>";
+                }
+                $result->close();
+            }
+            $mysqli->close();
         ?>
         </tbody>
     </table>
